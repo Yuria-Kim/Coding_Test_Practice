@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int n_arr [][] = new int[n][n];
+        for(int i = 0; i<n_arr.length; i++){
+            int temp = n-i;
+            for(int j = 0; j<n_arr[i].length; j++){
+                n_arr[i][j] = temp;
+                temp+=n;
+            }
+        }
+        //System.out.println(Arrays.deepToString(n_arr));
+        for(int i = 0; i<n_arr.length; i++){
+            for(int j = 0; j<n_arr[i].length; j++){
+                System.out.printf("%d ", n_arr[i][j]);
+            }
+            System.out.println();
+        }
+    }
+}
