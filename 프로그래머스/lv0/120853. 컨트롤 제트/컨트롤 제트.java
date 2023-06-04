@@ -1,13 +1,19 @@
+import java.util.*;
+
 class Solution {
     public int solution(String s) {
         int answer = 0;
-        String arr[] = s.split(" ");
-        for(int i = 0; i<arr.length; i++){
-            if(arr[i].equals("Z")){
-                answer -= Integer.valueOf(arr[i-1]);
-                continue;
+        Stack<Integer> stack = new Stack<>();
+
+        for (String w : s.split(" ")) {
+            if (w.equals("Z")) {
+                stack.pop();
+            } else {
+                stack.push(Integer.parseInt(w));
             }
-            answer += Integer.valueOf(arr[i]);
+        }
+        for (int i : stack) {
+            answer += i;
         }
         return answer;
     }
