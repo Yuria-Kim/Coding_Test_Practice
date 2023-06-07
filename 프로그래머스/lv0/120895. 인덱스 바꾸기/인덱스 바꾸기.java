@@ -1,13 +1,13 @@
 class Solution {
-    public String solution(String str, int n, int m) {
+    public String solution(String my_string, int num1, int num2) {
         String answer = "";
-        String s_arr [] = str.split("");
-        String temp = s_arr[n];
-        s_arr[n] = s_arr[m];
-        s_arr[m] = temp;
-        for(int i = 0; i<s_arr.length; i++) {
-        	answer += s_arr[i];
-        }
+
+        char[] ch = my_string.toCharArray();
+
+        ch[num1] = my_string.charAt(num2);
+        ch[num2] = my_string.charAt(num1);
+
+        answer = String.valueOf(ch);
         return answer;
     }
 }
