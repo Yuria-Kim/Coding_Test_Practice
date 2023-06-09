@@ -2,11 +2,12 @@ class Solution {
     public int solution(int a, int b, int c) {
         int answer = 0;
         for(int i = a; i<=b; i++){
-            String temp = String.valueOf(i);
-            for(int j = 0; j<temp.length(); j++){
-                if(temp.substring(j,j+1).equals(String.valueOf(c))){
+            int temp = i;//11
+            while(temp!=0){
+                if(temp%10==c){
                     answer++;
                 }
+                temp/=10;
             }
         }
         return answer;
