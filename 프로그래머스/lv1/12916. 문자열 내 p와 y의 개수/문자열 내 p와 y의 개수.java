@@ -1,18 +1,18 @@
 class Solution {
     boolean solution(String s) {
         boolean answer = true;
+        s = s.toUpperCase();
         String arr[] = s.split("");
-        int pcnt = 0;
-        int ycnt = 0;
+        int cnt = 0;
         for(int i = 0; i<arr.length; i++){
-            if(arr[i].equals("p")||arr[i].equals("P")){
-                pcnt++;
+            if(arr[i].equals("P")){
+                cnt++;
             }
-            else if(arr[i].equals("y")||arr[i].equals("Y")){
-                ycnt++;
+            else if(arr[i].equals("Y")){
+                cnt--;
             }
         }
-        answer = (pcnt==ycnt)?true:false;
+        answer = (cnt == 0)?true:false;
 
         return answer;
     }
