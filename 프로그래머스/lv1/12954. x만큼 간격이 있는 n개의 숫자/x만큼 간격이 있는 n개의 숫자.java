@@ -1,14 +1,10 @@
-import java.math.BigInteger;
 class Solution {
-    public BigInteger[] solution(int x, int n) {
-        BigInteger answer[] = new BigInteger[n];
-        BigInteger index = BigInteger.valueOf(x);
-        BigInteger xx = BigInteger.valueOf(x);
-        int i = 0;
-        while(i<n) {
-        	answer[i] = index;
-        	index = index.add(xx);
-        	i++;	
+    public long[] solution(int x, int n) {
+        long[] answer = new long[n];
+        answer[0] = x;
+
+        for (int i = 1; i < n; i++) {
+            answer[i] = answer[i - 1] + x;
         }
         return answer;
     }
