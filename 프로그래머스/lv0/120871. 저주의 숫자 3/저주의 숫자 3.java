@@ -4,11 +4,14 @@ class Solution {
         int cnt = 0;
         while(cnt < n){
             answer++;
-            if(answer % 3 == 0 || String.valueOf(answer).contains("3")){
+            if(x3(answer)){
                 continue;
             }
             cnt++;
         }
         return answer;
+    }
+    private boolean x3(int num) {
+        return num % 3 == 0 || String.valueOf(num).contains("3");
     }
 }
